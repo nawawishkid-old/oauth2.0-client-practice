@@ -1,0 +1,10 @@
+extends ../layouts/main.pug
+
+append head
+  link(rel="stylesheet", href="/css/app.css")
+
+append content
+  h1 Hello, #{user.firstName}
+  .card.flex.to-col.center-y.profile.margin-auto
+    img.profile-picture(src=user.picture alt="profile picture")
+    h2 #{user.firstName} #{user.lastName}

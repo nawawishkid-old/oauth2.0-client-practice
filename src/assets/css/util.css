@@ -1,0 +1,54 @@
+.card {
+  max-width: 100%;
+  padding: 1em;
+  box-shadow: 0 1px 3px -1px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex.center-x {
+  justify-content: center;
+}
+
+.flex.center-y {
+  align-items: center;
+}
+
+.flex.to-row {
+  flex-direction: row;
+}
+
+.flex.to-col {
+  flex-direction: column;
+}
+
+.is-block {
+  display: block;
+}
+
+.text.no-decor {
+  text-decoration: none;
+}
+
+.text.is-center {
+  text-align: center;
+}
+
+.has-border {
+  border: 1px solid;
+}
+
+.padding-1 {
+  padding: 1em;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+.is-circle {
+  border-radius: 50%;
+}

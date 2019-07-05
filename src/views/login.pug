@@ -1,0 +1,11 @@
+extends layouts/main.pug
+
+append head
+  link(rel="stylesheet", href="/css/login.css")
+
+append content
+  main.flex
+    .login-button-container.card.flex.to-col.center-y.margin-auto
+      h1 Login
+      a.button.login.google(href="/auth/google") Login with Google
+      a.button.login.facebook(href="/auth/facebook") Login with Facebook
