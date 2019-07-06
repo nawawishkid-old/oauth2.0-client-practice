@@ -16,7 +16,7 @@ mongoose.connect(
 );
 
 const sessionOptions = {
-  store: new FileStore(),
+  store: new FileStore(), // ttl defaults to 3600
   secret: config.app.secret,
   resave: true,
   saveUninitialized: true,

@@ -25,6 +25,12 @@ module.exports = {
         "https://www.googleapis.com/auth/spreadsheets"
         // "https://www.googleapis.com/auth/userinfo.profile"
       ]
+    },
+    facebook: {
+      clientID: process.env.FACEBOOK_APP_ID,
+      clientSecret: process.env.FACEBOOK_APP_SECRET,
+      callbackURL: process.env.FACEBOOK_CALLBACK_URL,
+      scopes: ["email", "public_profile"]
     }
   },
   db: {
