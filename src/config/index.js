@@ -37,6 +37,12 @@ module.exports = {
       clientSecret: process.env.LINE_CHANNEL_SECRET,
       callbackURL: process.env.LINE_CALLBACK_URL,
       scopes: ["profile", "openid", "email"]
+    },
+    github: {
+      clientID: process.env.GITHUB_CLIENT_ID,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET,
+      callbackURL: process.env.GITHUB_CALLBACK_URL,
+      scopes: ["read:user", "user:email"]
     }
   },
   db: {

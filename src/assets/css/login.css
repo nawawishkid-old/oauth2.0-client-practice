@@ -34,3 +34,7 @@ main {
 .button.login.line {
   color: greenyellow;
 }
+
+.button.login.github {
+  color: maroon;
+}

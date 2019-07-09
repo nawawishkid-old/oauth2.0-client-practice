@@ -75,6 +75,7 @@
 - ตอนทำของ Facebook ทำไมเราถึงไม่ได้ยุ่งเกี่ยวกับ refresh token เลย?
 - OpenID Connect ที่ Google ใช้นั้น ต่างจาก OAuth2.0 ยังไง?
 - สำหรับ Line ผมไม่ได้ request email permission เพราะต้องให้ทาง Line รีวิวก่อน และผมคิดว่าไม่จำเป็นต้องทำ เนื่องจากมันไม่ใช่ส่วนสำคัญในการทำความเข้าใจขั้นตอนการทำงานของ OAuth 2.0 protocol
+- แล้ว token revocation ล่ะ? ไม่เห็นพูดถึง
 
 ### `express-session`
 
