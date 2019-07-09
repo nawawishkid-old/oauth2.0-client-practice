@@ -52,7 +52,7 @@
 
 1. สร้าง channel ใหม่ใน Line developer console
 2. อย่าลืมตั้งค่า redirect_uri นะ
-3. นำ channel id, channel secret, และ redirect uri จาก developer console มาใส่ใน `.env` file ในชื่อ `LINE_CHANNEL_ID`, `LINE_CHANNEL_SECRET, และ `LINE_CALLBACK_URL` ตามลำดับ
+3. นำ channel id, channel secret, และ redirect uri จาก developer console มาใส่ใน `.env` file ในชื่อ `LINE_CHANNEL_ID`, `LINE_CHANNEL_SECRET, และ`LINE_CALLBACK_URL` ตามลำดับ
 
 ### จากนั้นก็...
 
@@ -64,18 +64,19 @@
 
 ## How It Works
 
-@TODO Explain how it works in detail.
+@TODO Explain how it works in detail.  
 @TODO Explain what's the difference between `nonce` (replay attack) and `state` (CSRF attack) in authorization code request.
 
 ---
 
 ## Notes
 
-- กรณีของ Google เราจะรู้ได้ไงว่าจะต้อง refresh access token เมื่อไหร่?
-- ตอนทำของ Facebook ทำไมเราถึงไม่ได้ยุ่งเกี่ยวกับ refresh token เลย?
-- OpenID Connect ที่ Google ใช้นั้น ต่างจาก OAuth2.0 ยังไง?
+- ไม่เห็นมีการ refresh token ให้ดูเลย?
+- ตอนทำของ Facebook และ GitHub ทำไมเราถึงไม่ได้ยุ่งเกี่ยวกับ refresh token เลย?
+- OpenID Connect ที่ Google และ Line ใช้นั้น ต่างจาก OAuth2.0 ยังไง?
 - สำหรับ Line ผมไม่ได้ request email permission เพราะต้องให้ทาง Line รีวิวก่อน และผมคิดว่าไม่จำเป็นต้องทำ เนื่องจากมันไม่ใช่ส่วนสำคัญในการทำความเข้าใจขั้นตอนการทำงานของ OAuth 2.0 protocol
 - แล้ว token revocation ล่ะ? ไม่เห็นพูดถึง
+- ควรเก็บชื่อของ user เป็น name field เดียว ไม่ต้องแยก firstName lastName เพราะชาวบ้านเขาไม่ใช้กัน ได้มาก็ต้องมา split เอา คนไหนชื่อคำเดียวก็ไม่มี lastName อีก
 
 ### `express-session`
 
