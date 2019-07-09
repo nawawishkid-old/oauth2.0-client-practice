@@ -12,7 +12,7 @@ main {
   width: 200px;
 }
 
-.login-button-container .button.login:first-of-type {
+.login-button-container .button.login:not(:last-of-type) {
   margin-bottom: 0.5em;
 }
 
@@ -29,4 +29,8 @@ main {
 
 .button.login.facebook {
   color: blue;
+}
+
+.button.login.line {
+  color: greenyellow;
 }

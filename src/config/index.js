@@ -31,6 +31,12 @@ module.exports = {
       clientSecret: process.env.FACEBOOK_APP_SECRET,
       callbackURL: process.env.FACEBOOK_CALLBACK_URL,
       scopes: ["email", "public_profile"]
+    },
+    line: {
+      clientID: process.env.LINE_CHANNEL_ID,
+      clientSecret: process.env.LINE_CHANNEL_SECRET,
+      callbackURL: process.env.LINE_CALLBACK_URL,
+      scopes: ["profile", "openid", "email"]
     }
   },
   db: {
