@@ -1,20 +1,19 @@
 const router = require("express").Router();
-const lineController = require("../../controllers/auth/line");
-const facebookController = require("../../controllers/auth/facebook");
-const googleController = require("../../controllers/auth/google");
-const githubController = require("../../controllers/auth/github");
 const validateState = require("../../middlewares/validate-oauth-state");
+const controllers = require("../../controllers/auth");
 
-router.get("/line", lineController.auth);
-router.get("/line/callback", validateState, lineController.authCallback);
+const { facebook, google, github, line } = controllers;
 
-router.get("/facebook", facebookController.auth);
-router.get("/facebook/callback", facebookController.authCallback);
+router.get("/line", line.auth);
+router.get("/line/callback", validateState, line.authCallback);
 
-router.get("/google", googleController.auth);
-router.get("/google/callback", validateState, googleController.authCallback);
+router.get("/facebook", facebook.auth);
+router.get("/facebook/callback", facebook.authCallback);
 
-router.get("/github", githubController.auth);
-router.get("/github/callback", validateState, githubController.authCallback);
+router.get("/google", google.auth);
+router.get("/google/callback", validateState, google.authCallback);
+
+router.get("/github", github.auth);
+router.get("/github/callback", validateState, github.authCallback);
 
 module.exports = router;
