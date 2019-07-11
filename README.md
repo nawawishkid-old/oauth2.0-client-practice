@@ -52,7 +52,15 @@
 
 1. สร้าง channel ใหม่ใน Line developer console
 2. อย่าลืมตั้งค่า redirect_uri นะ
-3. นำ channel id, channel secret, และ redirect uri จาก developer console มาใส่ใน `.env` file ในชื่อ `LINE_CHANNEL_ID`, `LINE_CHANNEL_SECRET, และ`LINE_CALLBACK_URL` ตามลำดับ
+3. นำ channel id, channel secret, และ redirect uri จาก developer console มาใส่ใน `.env` file ในชื่อ `LINE_CHANNEL_ID`, `LINE_CHANNEL_SECRET`, และ `LINE_CALLBACK_URL` ตามลำดับ
+
+### GitHub
+
+1. ไป register OAuth app ใน GitHub ก่อน
+2. อย่าลืมตั้งค่า redirect_uri นะ
+3. นำ client id, client secret, และ callback url ที่ตั้งไว้ มาใส่ใน `.env` file ในชื่อ `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`, และ `GITHUB_CALLBACK_URL` ตามลำดับ
+
+### Twitter
 
 ### จากนั้นก็...
 
@@ -66,6 +74,8 @@
 
 @TODO Explain how it works in detail.  
 @TODO Explain what's the difference between `nonce` (replay attack) and `state` (CSRF attack) in authorization code request.
+@TODO พาเขียนแบบ imperative line by line ก่อน จากนั้นค่อยชี้ให้เห็นว่าแต่ละ platform นั้นมีลักษณะร่วมอะไรบ้าง ค่อยพา refactor ทำเป็น OAuthClient
+@TODO เหลือของ Twitter ที่เป็น OAuth 1.0 ลอง sign request เองตามที่ ietf บอกแล้ว มึนมาก authenticate ไม่ได้ซักที พอก่อน
 
 ---
 
@@ -73,6 +83,7 @@
 
 - ไม่เห็นมีการ refresh token ให้ดูเลย?
 - ตอนทำของ Facebook และ GitHub ทำไมเราถึงไม่ได้ยุ่งเกี่ยวกับ refresh token เลย?
+- routes ของ Facebook ไม่ต้อง validate request state เหรอ?
 - OpenID Connect ที่ Google และ Line ใช้นั้น ต่างจาก OAuth2.0 ยังไง?
 - สำหรับ Line ผมไม่ได้ request email permission เพราะต้องให้ทาง Line รีวิวก่อน และผมคิดว่าไม่จำเป็นต้องทำ เนื่องจากมันไม่ใช่ส่วนสำคัญในการทำความเข้าใจขั้นตอนการทำงานของ OAuth 2.0 protocol
 - แล้ว token revocation ล่ะ? ไม่เห็นพูดถึง

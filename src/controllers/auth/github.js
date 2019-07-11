@@ -32,6 +32,60 @@ async function authCallback(req, res) {
     .catch(handleFailure("/login"));
 }
 
+/**
+ * ให้แต่ละ platform extends class นี้ไปเองดีกว่าทำเป็น generic class ที่ใช้ได้ทุก platform
+ */
+class OAuthClient {
+  /**
+   *
+   * @param {*} request HTTP client
+   * @param {*} credentials { client_id, client_secret, redirect_uri }
+   * @param {*} options { endpoints: { code, tokens, api }, state, nonce, scopes }
+   */
+  constructor(request, credentials, options = {}) {
+    this.request = request;
+    this.credentials = credentials;
+    this.endpoints = options.endpoints;
+    this.state = options.state || null;
+    this.nonce = options.nonce || null;
+    this.scopes = options.scopes || [];
+    this.scopesSeparator = options.scopesSeparator || " ";
+  }
+
+  getAuthCodeURL() {
+    const { client_id, redirect_uri } = this.credentials;
+    const { state, nonce, scopes } = this;
+    const url =
+      this.endpoints.code +
+      "?" +
+      qs.stringify({
+        client_id,
+        redirect_uri,
+        scope: scopes.join(this.scopesSeparator),
+        state,
+        nonce
+      });
+
+    return url;
+  }
+
+  /**
+   * ต้องให้ user ระบุ content-type ของ request ได้ เพราะบาง platform ก็ใช้เป็น urlencoded บางที่ก็เป็น json
+   *
+   * @param {*} code
+   * @param {*} userRequestOptions
+   */
+  getTokensByAuthCode(code, userRequestOptions = {}) {
+    const { client_id, client_secret, redirect_uri } = this.credentials;
+    const requestOptions = {
+      uri: this.endpoints.tokens,
+      ...userRequestOptions
+    };
+  }
+
+  getUserProfile() {}
+}
+
 const endpoints = {
   auth: `https://github.com/login/oauth/authorize`,
   tokens: `https://github.com/login/oauth/access_token`,

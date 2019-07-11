@@ -4,7 +4,8 @@
   "description": "- เข้าใจการทำงานของ OAuth2.0 - สามารถ integrate application เข้ากับ 3rd-party authorization provider ได้",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "serve": "node src/server.js"
   },
   "keywords": [],
   "author": "",
